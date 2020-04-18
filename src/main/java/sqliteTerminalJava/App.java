@@ -3,6 +3,8 @@
  */
 package sqliteTerminalJava;
 
+import com.almworks.sqlite4java.SQLiteConnection; 
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
