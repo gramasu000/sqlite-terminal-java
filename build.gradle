@@ -32,3 +32,8 @@ application {
     // Define the main class for the application.
     mainClassName = 'sqliteTerminalJava.App'
 }
+
+run {
+    // Configure Java console app to use Standard Input
+    standardInput = System.in
+}
