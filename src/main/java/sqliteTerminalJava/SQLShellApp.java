@@ -1,17 +1,34 @@
 package sqliteTerminalJava;
 
+import com.almworks.sqlite4java.SQLiteConnection;
+import com.almworks.sqlite4java.SQLiteStatement;
+import com.almworks.sqlite4java.SQLiteException;
+
 public class SQLShellApp extends ShellApp {
 
-    public String getGreeting() {
-        return "Test Run";
+    SQLiteConnection db;
+    SQLiteStatement st;
+
+    protected void begin() {
+        System.out.println("SQL Shell Application");
+        try {
+          db = new SQLiteConnection();
+          db.open(true);
+        } catch (SQLiteException e) {
+          System.out.println(e.toString());
+        }
     }
 
-    public String getPrompt() {
+    protected String getPrompt() {
         return ">";
     }
 
-    public String processInput(String input) {
-        return input;
-    }
+    protected String processInput(String input) {
+        String returnValue = db.debug(input);
+        return returnValue;
+    }        
 
+    protected void end() {
+      db.dispose();
+    }
 }

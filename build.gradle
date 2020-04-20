@@ -26,6 +26,7 @@ dependencies {
     
     // Use SQLite4Java JAR file from JCenter repository
     implementation 'com.almworks.sqlite4java:sqlite4java:1.0.392'
+    implementation 'com.almworks.sqlite4java:libsqlite4java-linux-amd64:1.0.392'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
